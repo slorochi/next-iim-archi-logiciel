@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Gamepad2, Info, Trophy, Clock, Users, Sparkles } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
-import { ScoreModal } from "@/components/ScoreModal";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
@@ -54,7 +53,7 @@ export default function Games() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800">
         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary mb-4"></div>
-        <p className="text-gray-400">Chargement de l'écosystème...</p>
+        <p className="text-gray-400">Chargement de l&apos;écosystème...</p>
       </div>
     );
   }
@@ -72,7 +71,7 @@ export default function Games() {
             </span>
           </h1>
           <p className="text-gray-400 max-w-lg mx-auto">
-            Générez des cellules primitives et observez l'évolution des espèces dans votre écosystème virtuel.
+            Générez des cellules primitives et observez l&apos;évolution des espèces dans votre écosystème virtuel.
           </p>
         </div>
 

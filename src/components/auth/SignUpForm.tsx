@@ -63,7 +63,7 @@ export function SignUpForm() {
     try {
       await signIn(provider, { callbackUrl: "/" });
     } catch (error) {
-      setError("Une erreur est survenue lors de la connexion");
+      setError(error instanceof Error ? error.message : "Une erreur est survenue lors de la connexion" );
     }
   };
 

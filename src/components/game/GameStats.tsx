@@ -50,7 +50,7 @@ export default function GameStats({
             </h1>
 
             <h2 className="font-bold text-2xl my-2">
-                Points d'évolutions: {Math.floor(points)}
+                Points d&apos;évolutions: {Math.floor(points)}
                 <span className="ml-4 text-blue-300">
                     Cellules générées: {totalCellsGenerated}
                 </span>

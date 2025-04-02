@@ -1,15 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { speciesData, tierConfig, gameOfLifePatterns, defaultPattern } from '@/components/game/const/gameConfig';
+import { speciesData, tierConfig } from '@/components/game/const/gameConfig';
 import { getTierConfig, initializeGrid, initializeSpeciesGrid, nextGeneration } from '@/components/game/service/getTierConfig';
-import Species from '@/components/game/classes/Species';
 import { calculateUpgrade } from '@/components/game/service/gameUpgrade';
 import { useSession } from 'next-auth/react';
 import { NavBar } from "@/components/NavBar";
 import CellsGrid from '@/components/game/CellsGrid';
 import SpeciesCellGrid from '@/components/game/SpeciesCellGrid';
 import GameStats from '@/components/game/GameStats';
-import { PrismaScoreService } from '@/services';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
@@ -38,7 +36,8 @@ function Play() {
     primate: 0,
     homme: 0
   });
-  const [activeSpecies, setActiveSpecies] = useState([]);
+  const activeSpecies = [];
+  // const [activeSpecies, setActiveSpecies] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedPattern, setSelectedPattern] = useState('default');
   const [selectedSpecies, setSelectedSpecies] = useState(null);
