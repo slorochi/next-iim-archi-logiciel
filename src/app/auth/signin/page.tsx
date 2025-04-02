@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { SignUpForm } from "@/components/auth/SignUpForm";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "Connexion - Next Game App",

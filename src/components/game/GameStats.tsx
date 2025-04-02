@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { tierConfig } from './const/gameConfig';
+import Species from './classes/Species';
 
 interface GameStatsProps {
     tier: number;
@@ -17,9 +18,7 @@ interface GameStatsProps {
         tier: number;
         type: string;
     }>;
-    activeSpecies: Array<{
-        type: string;
-    }>;
+    activeSpecies: Species[];
     getNextTier: () => { name: string; cost: number } | null;
     unlockTier: (cost: number, newTier: number) => void;
     autoUpgradeLevel: number;
@@ -90,7 +89,7 @@ export default function GameStats({
                                     <div key={species.name} className="flex justify-between mb-2">
                                         <span>{species.name}:</span>
                                         <span className="font-semibold text-blue-300">
-                                            &nbsp;{activeSpecies.filter(s => s.type === species.name).length}
+                                            &nbsp;{activeSpecies.filter(s => s.name === species.name).length}
                                         </span>
                                     </div>
                                 ))}

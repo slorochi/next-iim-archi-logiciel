@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import { PrismaUserService } from "@/services";
 
 const userService = new PrismaUserService();
@@ -27,6 +27,11 @@ export async function GET() {
 
     // Calculer le classement
     const allUsersBestScores = await userService.getUsersBestScores();
+    allUsersBestScores.map(user => {
+      console.log("jhellllolooooo IDDD");
+      console.log(user.id);
+    });
+    console.log("################")
     // Créer un tableau des meilleurs scores avec les IDs des utilisateurs
     const bestScores = allUsersBestScores
       .map(user => ({

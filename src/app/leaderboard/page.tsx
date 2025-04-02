@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Medal, Crown } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
-
+import Image from "next/image";
 interface Score {
   id: string;
   points: number;
@@ -119,7 +119,7 @@ export default function Leaderboard() {
                         {index + 4}
                       </span>
                       {score.user.image ? (
-                        <img
+                        <Image
                           src={score.user.image}
                           alt={score.user.name || ""}
                           className="h-8 w-8 rounded-full"
