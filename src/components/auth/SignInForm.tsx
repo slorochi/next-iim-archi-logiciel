@@ -19,7 +19,7 @@ export const SignInForm = () => {
         setError("Invalid credentials");
       }
     } catch (error) {
-      setError("An error occurred");
+      setError("An error occurred"+ error);
     }
   };
 

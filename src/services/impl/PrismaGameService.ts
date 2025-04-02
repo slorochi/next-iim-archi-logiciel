@@ -1,4 +1,3 @@
-import prisma from "@/lib/prisma";
 import { IGameService, GameStats } from "../interfaces/IGameService";
 import { PrismaScoreService } from "./PrismaScoreService";
 import { PrismaUserService } from "./PrismaUserService";

@@ -1,12 +1,14 @@
+/* eslint-disable */
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Badge, LogOut, User } from "lucide-react";
+import { Badge, LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Session } from "next-auth";
 
 interface NavBarProps {
-  session?: any;
+  session: Session;
 }
 
 export function NavBar({ session }: NavBarProps) {

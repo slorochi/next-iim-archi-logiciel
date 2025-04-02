@@ -2,7 +2,7 @@ import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
 export default withAuth(
-  function middleware(req) {
+  function middleware() {
     // Si l'utilisateur n'est pas authentifié, il sera automatiquement redirigé vers la page de connexion
     return NextResponse.next();
   },

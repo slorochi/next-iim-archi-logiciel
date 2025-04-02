@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Trophy, Activity, Target, Medal, Gamepad2 } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";

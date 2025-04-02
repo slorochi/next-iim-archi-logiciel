@@ -5,7 +5,6 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "@/utils/prisma";
-import bcrypt from "bcryptjs";
 import { compare } from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
