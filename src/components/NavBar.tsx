@@ -6,9 +6,9 @@ import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Session } from "next-auth";
-
+import Image from "next/image";
 interface NavBarProps {
-  session: Session;
+  session: Session | null;
 }
 
 export function NavBar({ session }: NavBarProps) {
@@ -25,7 +25,7 @@ export function NavBar({ session }: NavBarProps) {
           <div className="flex items-center space-x-8">
             <Link href="/dashboard">
               <div className="flex items-center gap-2">
-                <Badge variant="secondary">v beta 0.1</Badge>
+                <Badge >v beta 0.1</Badge>
                 <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-white">
                   Cells
                 </h1>
@@ -83,7 +83,7 @@ export function NavBar({ session }: NavBarProps) {
         <div className="flex items-center gap-2">
           {session?.user?.image ? (
             <div className="flex items-center gap-2 mr-2">
-              <img
+              <Image
                 src={session.user.image}
                 alt="Profile"
                 className="h-6 w-6 rounded-full"

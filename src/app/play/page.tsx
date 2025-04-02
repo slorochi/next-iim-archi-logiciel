@@ -10,6 +10,7 @@ import SpeciesCellGrid from '@/components/game/SpeciesCellGrid';
 import GameStats from '@/components/game/GameStats';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import Species from '@/components/game/classes/Species';
 
 function Play() {
   const { data: session } = useSession();
@@ -36,7 +37,7 @@ function Play() {
     primate: 0,
     homme: 0
   });
-  const activeSpecies = [];
+  const activeSpecies: Species[] = [];
   // const [activeSpecies, setActiveSpecies] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedPattern, setSelectedPattern] = useState('default');
@@ -98,7 +99,7 @@ function Play() {
  
 
   // Déblocage et améliorations
-  const unlockTier = useCallback((tierCost, newTier) => {
+  const unlockTier = useCallback((tierCost: number, newTier: number) => {
     if (points >= tierCost) {
       setPoints((prev) => prev - tierCost);
       setTier(newTier);

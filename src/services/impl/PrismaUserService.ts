@@ -3,11 +3,12 @@ import { IUserService } from "../interfaces/IUserService";
 import { User, Score } from "@prisma/client";
 
 export class PrismaUserService implements IUserService {
-  async createUser(data: { email: string; name: string }): Promise<User> {
+  async createUser(data: { email: string; password: string; name?: string }): Promise<User> {
     return prisma.user.create({
       data: {
         email: data.email,
         name: data.name,
+        password: data.password
       },
     });
   }
@@ -45,7 +46,7 @@ export class PrismaUserService implements IUserService {
     return user;
   }
 
-  async getUsersBestScores(): Promise<User & { scores: Score[] }[]> {
+  async getUsersBestScores(): Promise<{id: string, scores: {points: number}[] }[]> {
     const allUsersBestScores = await prisma.user.findMany({
       select: {
         id: true,
@@ -60,6 +61,6 @@ export class PrismaUserService implements IUserService {
       },
       },
     });
-    return allUsersBestScores as unknown as User & { scores: Score[] }[];
+    return allUsersBestScores;
   }
 } 

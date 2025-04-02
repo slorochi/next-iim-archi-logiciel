@@ -1,5 +1,5 @@
 import { Score, User } from "@prisma/client";
-
+import Image from "next/image";
 interface ScoreWithUser extends Score {
   user: User;
 }
@@ -41,7 +41,7 @@ export const ScoreList = ({ scores, title }: ScoreListProps) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     {score.user.image && (
-                      <img
+                      <Image  
                         className="h-8 w-8 rounded-full mr-3"
                         src={score.user.image}
                         alt={`${score.user.name}'s avatar`}

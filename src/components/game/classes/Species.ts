@@ -1,5 +1,6 @@
 class Species {
-    constructor(type, x, y, data) {
+    constructor(name: string, type: string, x: number, y: number, data: any) {
+      this.name = name;
       this.type = type;
       this.x = x;
       this.y = y;

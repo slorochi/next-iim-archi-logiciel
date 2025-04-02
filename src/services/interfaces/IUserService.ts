@@ -10,5 +10,5 @@ export interface IUserService {
   getUserById(id: string): Promise<User | null>;
   getTotalUsers(): Promise<number>;
   getUserScores(email: string): Promise<User & { scores: Score[] } | null>;
-  getUsersBestScores(): Promise<User & { scores: Score[] }[]>;
+  getUsersBestScores(): Promise<{id: string, scores: {points: number}[] }[]>;
 }
