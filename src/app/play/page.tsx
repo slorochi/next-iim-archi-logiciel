@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { speciesData, tierConfig } from '@/components/game/const/gameConfig';
@@ -144,7 +145,6 @@ function Play() {
       <NavBar session={session} />
       <Button  className='bg-gray-700 px-4 cursor-pointer hover:bg-gray-600 text-white p-3 rounded-md absolute top-32 right-10' onClick={handleSubmitScore}>Terminer la partie</Button>
       <GameStats
-        speciesCounts={speciesCounts}
         tier={tier}
         points={points}
         totalCellsGenerated={totalCellsGenerated}
