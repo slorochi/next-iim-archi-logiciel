@@ -27,11 +27,7 @@ export async function GET() {
 
     // Calculer le classement
     const allUsersBestScores = await userService.getUsersBestScores();
-    allUsersBestScores.map(user => {
-      console.log("jhellllolooooo IDDD");
-      console.log(user.id);
-    });
-    console.log("################")
+
     // Créer un tableau des meilleurs scores avec les IDs des utilisateurs
     const bestScores = allUsersBestScores
       .map(user => ({
