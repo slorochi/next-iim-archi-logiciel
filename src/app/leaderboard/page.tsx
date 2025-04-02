@@ -123,6 +123,8 @@ export default function Leaderboard() {
                           src={score.user.image}
                           alt={score.user.name || ""}
                           className="h-8 w-8 rounded-full"
+                          width={32}
+                          height={32} 
                         />
                       ) : (
                         <div className="h-8 w-8 rounded-full bg-gray-600" />

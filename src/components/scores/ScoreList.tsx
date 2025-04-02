@@ -45,6 +45,8 @@ export const ScoreList = ({ scores, title }: ScoreListProps) => {
                         className="h-8 w-8 rounded-full mr-3"
                         src={score.user.image}
                         alt={`${score.user.name}'s avatar`}
+                        width={24}
+                        height={24}
                       />
                     )}
                     <div className="text-sm font-medium text-gray-900">
