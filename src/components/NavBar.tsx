@@ -86,7 +86,9 @@ export function NavBar({ session }: NavBarProps) {
               <Image
                 src={session.user.image}
                 alt="Profile"
-                className="h-6 w-6 rounded-full"
+                className="h-7 w-7 rounded-full"
+                width={32}
+                height={32}
               />
             </div>
           ) : (

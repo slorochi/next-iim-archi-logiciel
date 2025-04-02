@@ -14,7 +14,6 @@ export const SignInForm = () => {
         password,
         redirect: false,
       });
-
       if (result?.error) {
         setError("Invalid credentials");
       }
