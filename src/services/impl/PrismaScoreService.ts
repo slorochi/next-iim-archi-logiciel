@@ -25,9 +25,9 @@ export class PrismaScoreService implements IScoreService {
     });
   }
 
-  async getUserScores(userId: string): Promise<ScoreWithUser[]> {
+  async getUserScores(email: string): Promise<ScoreWithUser[]> {
     return prisma.score.findMany({
-      where: { userId },
+      where: { user: { email } },
       orderBy: {
         points: "desc",
       },
